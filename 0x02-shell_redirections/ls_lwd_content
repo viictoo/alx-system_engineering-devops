@@ -1,0 +1,14 @@
+total 40
+drwxr-xr-x 2 root root 220 Mar 13 04:14 .
+drwxr-xr-x 6 root root 121 Mar 13 02:47 ..
+-rwxr-xr-x 1 root root  32 Mar 13 03:40 0-hello_world
+-rwxr-xr-x 1 root root  31 Mar 13 03:35 1-confused_smiley
+-rwxr-xr-x 1 root root  28 Mar 13 03:08 2-hellofile
+-rwxr-xr-x 1 root root  39 Mar 13 03:24 3-twofiles
+-rwxr-xr-x 1 root root  33 Mar 13 03:28 4-lastlines
+-rwxr-xr-x 1 root root  29 Mar 13 03:29 5-firstlines
+-rwxr-xr-x 1 root root  35 Mar 13 03:42 6-third_line
+-rwxr-xr-x 1 root root 108 Mar 13 04:09 7-file
+-rwxr-xr-x 1 root root  36 Mar 13 04:11 8-cwd_state
+-rw-r--r-- 1 root root   0 Mar 13 04:14 ls_lwd_content
+-rw-r--r-- 1 root root  32 Mar 13 02:48 REAMDE.md
