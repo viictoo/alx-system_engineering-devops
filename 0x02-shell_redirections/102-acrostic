@@ -1,2 +1,2 @@
 #!/bin/bash
-cut -c 1 | tr -d '\n'|printf '%s\n'
+{ tr -d '\n' <<< $(cut -c 1 < "$1"); echo; } | { read -r output; echo "$output"; }
