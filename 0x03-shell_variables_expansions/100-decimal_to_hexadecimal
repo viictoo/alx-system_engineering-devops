@@ -1,0 +1,2 @@
+#!/bin/bash
+printf "ibase=10\nobase=16; %s\n" "$DECIMAL" | bc
