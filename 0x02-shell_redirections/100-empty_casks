@@ -1,2 +1,2 @@
-#n!/bin/bash
+#!/bin/bash
 printf '%s\n' "$(find . -type d -empty -printf '%f\n'| tr '/' ' ')" "$(find . -type f -empty -printf '%f\n' tr '/' ' ' )"
