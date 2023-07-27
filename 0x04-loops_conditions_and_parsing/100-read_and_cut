@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+
+while read -r line
+do
+    echo "$line" | cut -d ":" -f 1,3,6
+done < /etc/passwd
+
+# Check if the /etc/passwd file exists
+# if [ ! -f "/etc/passwd" ]; then
+#     echo "Error: /etc/passwd file not found."
+#     exit 1
+# fi
+
+# # Display the content of /etc/passwd with only required fields
+# cut -d ':' -f 1,3,6 /etc/passwd
+
+# while IFS=: read -r username _ userid _  _ homedir _
+# do
+#     echo "$username:$userid:$homedir"
+# done < "/etc/passwd"

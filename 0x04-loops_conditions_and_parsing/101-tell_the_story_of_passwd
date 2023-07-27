@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+
+
+while IFS=: read -r username password uid gid geco home path
+do
+    echo "The user $username is part of the $gid gang, lives in $home and rides $path. $uid's place is protected by the passcode $password, more info about the user here: $geco"
+done < /etc/passwd
