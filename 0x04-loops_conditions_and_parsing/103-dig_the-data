@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # This script is displaying "Best School" 10 times
 
-# awk '{ print $1,$9 }' apache-access.log | sort | uniq -c | sort -nr | sed 's/^[ \t]*/    /'
+awk '{ print $1,$9 }' apache-access.log | sort | uniq -c | sort -nr | sed 's/^[ \t]*/    /'
 
-awk '{ fields[$1" "$9]++ }
-     END { for (elem in fields) print fields[elem], elem }' apache-access.log |
-sort -rn
+# awk '{ fields[$1" "$9]++ }
+#      END { for (elem in fields) print fields[elem], elem }' apache-access.log |
+# sort -rn
