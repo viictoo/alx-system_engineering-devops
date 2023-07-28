@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Must show all processes, a
+# for all users, including those which might not have a TTY, x
+# Display in a user-oriented format, u
+# Show process hierarchy, f
+
+ps faux

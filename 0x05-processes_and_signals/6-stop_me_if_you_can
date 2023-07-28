@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Kill script that displays To infinity and beyond indefinitely using pkill
+
+pkill -f "4-to_infinity_and_beyond"

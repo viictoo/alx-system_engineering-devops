@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Kill script that displays To infinity and beyond indefinitely using pkill
+
+# using -kill
+# pkill -kill -f "7-highlander"
+# using --signal
+pkill -f "highlander" --signal SIGKILL

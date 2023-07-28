@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Using your exercise 1, displays lines containing the bash word using pgrep
+
+pgrep -l bash
