@@ -97,3 +97,6 @@ We have added several components to the infrastructure to improve security, encr
 8. **Monitoring Clients**: Monitoring clients (e.g., IP: 192.168.1.104) collect data on server and application performance and transmit it to the monitoring service (Sumo Logic) for analysis.
 
 This process ensures secure, encrypted, and monitored communication between the client browser and the servers at www.foobar.com.
+
+
+![image](https://github.com/viictoo/alx-system_engineering-devops/blob/master/0x09-web_infrastructure_design/images/task_2.png)

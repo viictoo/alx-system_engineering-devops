@@ -89,3 +89,5 @@ Our infrastructure offers several benefits:
 - **Enhanced Security**: Firewalls and security configurations provide robust protection against unauthorized access and threats.
 
 - **Improved Fault Tolerance**: Failures in one component have limited impact on others, minimizing downtime and disruptions.
+
+![image](https://github.com/viictoo/alx-system_engineering-devops/blob/master/0x09-web_infrastructure_design/images/task_3.png)

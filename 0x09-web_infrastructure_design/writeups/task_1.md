@@ -64,3 +64,6 @@ In a Primary-Replica (Master-Slave) database cluster:
 
 - **Primary Node**: The Primary handles both read and write operations. It's responsible for maintaining data consistency and integrity, making it crucial for the application's core functionality.
 - **Replica Node**: Replica nodes are primarily used for read operations. They help offload read traffic from the Primary, improving read performance and scalability. However, Replica nodes are read-only and do not accept write operations directly.
+
+
+![image](https://github.com/viictoo/alx-system_engineering-devops/blob/master/0x09-web_infrastructure_design/images/task_1.png)

@@ -52,6 +52,7 @@ When maintenance or updates are needed, such as deploying new code or configurin
 
 ### Limited Scalability
 
-This one-server infrastructure has limited scalability. It may struggle to handle high traffic loads, and scaling up to accommodate more users can be challenging. As traffic grows, you may encounter performance issues and slower response times, which can negatively impact the user experience.
+This one-server infrastructure has limited scalability. It may struggle to handle high traffic loads, and scaling up to accommodate more users can be challenging. As traffic grows,it may encounter performance issues and slower response times, which can negatively impact the user experience.
 
-To address these issues and improve the infrastructure's reliability and scalability, we might consider adding redundancy, load balancing, and additional servers to distribute the load and enhance fault tolerance.
+
+![image](https://github.com/viictoo/alx-system_engineering-devops/blob/master/0x09-web_infrastructure_design/images/task_0.png)
