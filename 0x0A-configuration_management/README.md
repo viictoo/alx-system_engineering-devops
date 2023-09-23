@@ -24,7 +24,7 @@ Once you have your server setup translated into a set of provisioning scripts,
 Version control tools, such as Git, can be used to keep track of changes made to the provisioning and to maintain separate branches for legacy versions of the scripts. You can also use version control to implement a code review policy for the provisioning scripts. This practice will add extra consistency to your infrastructure setup.
 
 *** Replicated Environments ***
-
+<img=https://github.com/viictoo/alx-system_engineering-devops/blob/master/0x0A-configuration_management/resources/puppeteer.jpg>
 Configuration management makes it trivial to replicate environments with the exact same software and configurations. This enables you to effectively build a multistage ecosystem, with production, development, and testing servers. This practice will minimize problems caused by environment discrepancies that frequently occur when applications are deployed to production or shared between co-workers with different machine setups (different operating system, software versions and/or configurations).
 
  	Ansible 	Puppet 	Chef
