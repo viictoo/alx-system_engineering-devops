@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# a script to mod server config to add redirect url
+
+# upgrade services and install nginx
+sudo apt-get -y upgrade
+sudo apt-get -y update
+# install nginx
+sudo apt-get -y install nginx
+
+# setup root page
+echo "Hello World!" | sudo tee /var/www/html/index.html
+echo "Hello World!" | sudo tee /usr/share/nginx/html/index.html
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+
+# add redirect using sed -i
+redirect_me="\tlocation /redirect_me {\n\t\t\treturn 301 https://www.youtube.com/watch?v=dQw4w9WgXcQ;\n\t\t}\n"
+file_path="/etc/nginx/sites-enabled/default"
+sed -i "/^\tlocation \/ {/i \ $redirect_me" ${file_path}
+
+# add 404 err using sed -i
+err="\terror_page 404 /404.html;\n"
+sed -i "/^\tlocation \/ {/i \ $err" ${file_path}
+
+#restart service
+sudo service nginx restart

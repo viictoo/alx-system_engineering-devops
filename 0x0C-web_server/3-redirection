@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# a script to mod server config to add redirect url
+
+# upgrade services
+sudo apt-get -y upgrade
+sudo apt-get -y update
+install nginx
+sudo apt-get -y install nginx
+# setup root page
+echo "Hello World!" | sudo tee /var/www/html/index.html
+echo "Hello World!" | sudo tee /usr/share/nginx/html/index.html
+
+# add redirect using sed -i
+redirect_me="\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=dQw4w9WgXcQ;\n\t\t}\n"
+file_path="/etc/nginx/sites-enabled/default"
+# sudo sed -i "${search_str}i ${redirect_me}" ${file_path}
+# sed -i "/location \/ {/i \ $redirect_me" ${file_path}
+sed -i "/^\tlocation \/ {/i \ $redirect_me" ${file_path}
+sudo service nginx restart
