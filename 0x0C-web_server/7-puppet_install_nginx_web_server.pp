@@ -1,7 +1,7 @@
 # puppet file to setup a web server and add keys
 $redirect_me = '\tlocation /redirect_me {\n\t\t\treturn 301 https://www.youtube.com/watch?v=dQw4w9WgXcQ;\n\t\t}\n'
 $filepath = '/etc/nginx/sites-enabled/default'
-$search_str = '/location \/ {'
+$search_str = '/^\tlocation \/ {'
 $err = "\terror_page 404 /404.html;\n\n"
 
 exec { 'update packages':
