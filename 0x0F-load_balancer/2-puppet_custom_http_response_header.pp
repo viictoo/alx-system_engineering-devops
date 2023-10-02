@@ -1,4 +1,4 @@
-
+# using puppet to add a line in a file
 file_line { 'add_header_X-Served-By':
   ensure => present,
   path   => '/etc/nginx/sites-enabled/default',
