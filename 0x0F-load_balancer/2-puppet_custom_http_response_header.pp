@@ -18,5 +18,5 @@ file_line { 'add_header_X-Served-By':
 }
 
 service {'nginx':
-  ensure  => 'running'
+  ensure  => running,
 }
