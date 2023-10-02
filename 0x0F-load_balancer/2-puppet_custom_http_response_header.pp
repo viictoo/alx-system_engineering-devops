@@ -4,9 +4,11 @@ exec { 'update':
   provider => shell,
 }
 
-package { 'nginx':
-  ensure  => installed,
+exec { 'install nginx':
+  command  => 'sudo apt-get -y install nginx',
+  provider => shell,
 }
+
 
 file_line { 'add_header_X-Served-By':
   ensure => present,
@@ -16,7 +18,8 @@ file_line { 'add_header_X-Served-By':
   # notify => Service['nginx'],
 }
 
-# service { 'nginx':
+# service { 'nginx':service nginx status
+
 #   ensure    => 'running',
 #   enable    => true,
 #   subscribe => File_line['add_header_X-Served-By'],
