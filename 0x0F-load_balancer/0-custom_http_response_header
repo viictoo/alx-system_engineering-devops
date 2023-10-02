@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # a script to mod server config to add redirect url
-
+sudo apt-get update
+sudo apt-get -y install nginx
 file_path="/etc/nginx/sites-enabled/default"
 # file_path="/home/victorvc/alx/alx-system_engineering-devops/0x0C-web_server/testfile"
 
