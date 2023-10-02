@@ -7,3 +7,4 @@ file_path="/etc/nginx/sites-enabled/default"
 # add server header using sed -i
 header="\tadd_header X-Served-By \"$HOSTNAME\";\n"
 sed -i "/^\tlocation \/ {/i \ $header" ${file_path}
+sudo service nginx restart
