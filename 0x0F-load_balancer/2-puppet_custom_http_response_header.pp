@@ -17,6 +17,8 @@ file_line { 'add_header_X-Served-By':
   after  => '^server\s*{',
 }
 
-service {'nginx':
-  ensure  => running,
+exec {'restart':
+  command => 'service nginx restart',
+  path    => '[/usr/bin, /usr/sbin]',
+
 }
