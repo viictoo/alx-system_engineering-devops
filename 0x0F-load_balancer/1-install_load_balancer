@@ -14,9 +14,9 @@ ha_cfg="/etc/haproxy/haproxy.cfg"
 st="\\\t"
 nx="\n\t"
 end="\n"
-def1="timeout http-request 10s$nx"
-def3="option httpclose$nx"
-defx="option forwardfor$end"
+#def1="timeout http-request 10s$nx"
+#def3="option httpclose$nx"
+#defx="option forwardfor$end"
 
 front="frontend haproxy$nx"
 front1="bind 0.0.0.0:80$nx"
@@ -30,6 +30,7 @@ back3="server 343517-web-01 34.229.70.213:80 check$end"
 
 # sudo sed -i "\$a ENABLED=1" "/etc/default/haproxy"
 
-sudo sed -i "\$a $st${def1}${def3}${defx}${front}${front1}${front3}${front2}${back}${back1}${back2}${back3}" "$ha_cfg"
+# sudo sed -i "\$a $st${def1}${def3}${defx}${front}${front1}${front3}${front2}${back}${back1}${back2}${back3}" "$ha_cfg"
 
+sudo sed -i "\$a $st${front}${front1}${front3}${front2}${back}${back1}${back2}${back3}" "$ha_cfg"
 sudo service haproxy restart
