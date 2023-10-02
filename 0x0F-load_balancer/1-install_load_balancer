@@ -6,7 +6,7 @@ sudo apt-get -y update
 
 sudo apt-get -y install software-properties-common
 sudo add-apt repository -y ppa:vbernat/haproxy-2.0
-sudo app-get -y update
+sudo-get -y update
 sudo apt-get -y install haproxy
 
 ha_cfg="/etc/haproxy/haproxy.cfg"
@@ -15,11 +15,11 @@ st="\\\t"
 nx="\n\t"
 end="\n"
 def1="timeout http-request 10s$nx"
-def2="listen lb$nx"
-def3="option forwardfor$end"
+def3="option httpclose$nx"
+defx="option forwardfor$end"
 
-front="frontend myfrontend$nx"
-front1="bind 127.0.0.1:80$nx"
+front="frontend haproxy$nx"
+front1="bind 0.0.0.0:80$nx"
 front3="mode http$nx"
 front2="default_backend my_servers$end"
 
@@ -30,6 +30,6 @@ back3="server 343517-web-01 34.229.70.213:80 check$end"
 
 sudo sed -i "\$a ENABLED=1" "/etc/default/haproxy"
 
-sudo sed -i "\$a $st${def1}${def2}${def3}${front}${front1}${front3}${front2}${back}${back1}${back2}${back3}" "$ha_cfg"
+sudo sed -i "\$a $st${def1}${def3}${defx}${front}${front1}${front3}${front2}${back}${back1}${back2}${back3}" "$ha_cfg"
 
-sudo systemctl haproxy restart
+sudo service haproxy restart
