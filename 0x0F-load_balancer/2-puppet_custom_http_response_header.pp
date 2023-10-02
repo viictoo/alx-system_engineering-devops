@@ -13,11 +13,15 @@ file_line { 'add_header_X-Served-By':
   path   => '/etc/nginx/sites-enabled/default',
   line   => "\tadd_header X-Served-By \"${hostname}\";",
   after  => 'server_name _;',
-  notify => Service['nginx'],
+  # notify => Service['nginx'],
 }
 
-service { 'nginx':
-  ensure    => 'running',
-  enable    => true,
-  subscribe => File_line['add_header_X-Served-By'],
+# service { 'nginx':
+#   ensure    => 'running',
+#   enable    => true,
+#   subscribe => File_line['add_header_X-Served-By'],
+# }
+exec { 'command':
+  command  => 'service nginx restart',
+  provider => shell,
 }
