@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# a script to mod server config to add redirect url
+
+file_path="/etc/nginx/sites-enabled/default"
+# file_path="/home/victorvc/alx/alx-system_engineering-devops/0x0C-web_server/testfile"
+
+# add server header using sed -i
+header="\tadd_header X-Served-By \"$HOSTNAME\";\n"
+sed -i "/^\tlocation \/ {/i \ $header" ${file_path}
