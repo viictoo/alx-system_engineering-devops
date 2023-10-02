@@ -20,7 +20,7 @@ end="\n"
 #defx="option forwardfor$end"
 
 front="frontend haproxy$nx"
-front1="bind 0.0.0.0:80$nx"
+front1="bind *:80$nx"
 front3="mode http$nx"
 front2="default_backend my_servers$end"
 
