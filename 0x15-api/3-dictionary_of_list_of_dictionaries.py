@@ -25,25 +25,24 @@ def getName():
 
 
 def getAllData(employees):
-    """get and display required data
-    """
-
+    """get and display required data"""
     uri = 'https://jsonplaceholder.typicode.com/todos/'
-
     response = requests.get(uri)
     resp = (response.json())
     # print(resp)
-    if resp:
+
+    if employees:
         try:
-            row = []
             jDic = {}
             for employee in employees:
+                row = []
                 for task in resp:
                     if int(employee[0]) == task.get("userId"):
                         dic = {
                             "task": task.get("title"),
                             "completed": task.get("completed"),
-                            "username": employee[1]}
+                            "username": employee[1]
+                        }
                         row.append(dic)
 
                 jDic[str(employee[0])] = row
@@ -54,8 +53,8 @@ def getAllData(employees):
                 json.dump(jDic, file)
 
         except Exception as e:
-            print("Some exception occured", e)
-            return (-1)
+            print("Some exception occurred:", e)
+            return -1
     else:
         print("Not a Valid JSON")
         exit(-1)
