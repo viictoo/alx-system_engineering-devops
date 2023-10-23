@@ -36,13 +36,14 @@ def getAllData(employees):
     if resp:
         try:
             row = []
-            dic, jDic = {}, {}
+            jDic = {}
             for employee in employees:
                 for task in resp:
                     if int(employee[0]) == task.get("userId"):
-                        dic["task"] = task.get("title")
-                        dic["completed"] = task.get("completed")
-                        dic["username"] = employee[1]
+                        dic = {
+                            "task": task.get("title"),
+                            "completed": task.get("completed"),
+                            "username": employee[1]}
                         row.append(dic)
 
                 jDic[employee[0]] = row
