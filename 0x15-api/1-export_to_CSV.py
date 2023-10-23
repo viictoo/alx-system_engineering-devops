@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """api module"""
-from sys import argv as av
 import csv
 import requests
+from sys import argv as av
 
 
 def validator(av):
