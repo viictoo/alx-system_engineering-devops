@@ -54,7 +54,7 @@ def getData(id, name):
                 row.append(dic)
 
             jDic[f"{id}"] = row
-            print(jDic)
+            # print(jDic)
 
             filename = "{}.json".format(id)
 
