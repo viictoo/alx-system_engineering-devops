@@ -53,7 +53,7 @@ def getData(id, name):
                 dic["username"] = name
                 row.append(dic)
 
-            jDic[f"{id}"] = row
+            jDic[int(id)] = row
             # print(jDic)
 
             filename = "{}.json".format(id)
