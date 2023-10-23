@@ -46,11 +46,12 @@ def getData(id, name):
     if resp:
         try:
             row = []
-            dic, jDic = {}, {}
+            jDic = {}
             for task in resp:
-                dic["task"] = task.get("title")
-                dic["completed"] = task.get("completed")
-                dic["username"] = name
+                dic = {
+                    "task": task.get("title"),
+                    "completed": task.get("completed"),
+                    "username": name}
                 row.append(dic)
 
             jDic[int(id)] = row
