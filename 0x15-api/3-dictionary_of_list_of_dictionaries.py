@@ -46,7 +46,7 @@ def getAllData(employees):
                             "username": employee[1]}
                         row.append(dic)
 
-                jDic[employee[0]] = row
+                jDic[int(employee[0])] = row
 
             filename = "todo_all_employees.json"
 
