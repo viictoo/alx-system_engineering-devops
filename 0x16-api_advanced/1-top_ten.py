@@ -10,7 +10,7 @@ def top_ten(subreddit):
     Args: https://www.reddit.com/r/python/top.json?limit=10
 
     """
-    if type(subreddit) is not str:
+    if subreddit is None or type(subreddit) is not str:
         print(None)
 
     headers = {'User-Agent': 'VUTHhzWkxrTG56djBsR3dhN'}
