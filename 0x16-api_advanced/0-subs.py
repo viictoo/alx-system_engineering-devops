@@ -14,6 +14,8 @@ def number_of_subscribers(subreddit):
     Returns:
         int: subscriber count for the subreddit
     """
+    if subreddit is None or type(subreddit) is not str:
+        return 0
 
     headers = {
         'User-Agent': 'VUTHhzWkxrTG56djBsR3dhN',
@@ -23,7 +25,12 @@ def number_of_subscribers(subreddit):
 
     try:
         response = requests.get(url, headers=headers)
+        if response.status_code == 404:
+            return 0
         data = response.json()
+        # print(dat
+        # if data.status >= 400:
+        #     return 0
 
         subs = data.get('data').get('subscribers')
 
