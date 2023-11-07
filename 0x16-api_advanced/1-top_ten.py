@@ -23,6 +23,7 @@ def top_ten(subreddit):
     try:
         if response.status_code >= 400:
             print(None)
+            return
 
         data = response.json()
         if data is None:
