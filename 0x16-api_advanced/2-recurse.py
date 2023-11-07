@@ -20,7 +20,8 @@ def recurse(subreddit, hot_list=[], after=None):
 
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
 
-    response = requests.get(url, headers=headers, params=parameters)
+    response = requests.get(url, headers=headers, params=parameters,
+                            allow_redirects=False)
     # print(response.json())
     if response.status_code >= 400:
         return None
