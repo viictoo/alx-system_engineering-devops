@@ -36,8 +36,8 @@ def count_words(subreddit, word_list, words=None, after=None):
 
     if response.status_code >= 400:
         return None
-    # if response.status_code != 200:
-    #     return None
+    if response.status_code < 200:
+        return None
     data = response.json()
 
     posts = data.get('data').get('children')
