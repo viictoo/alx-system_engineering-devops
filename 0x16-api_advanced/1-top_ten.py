@@ -10,8 +10,8 @@ def top_ten(subreddit):
     Args: https://www.reddit.com/r/python/top.json?limit=10
 
     """
-    # if subreddit is None or type(subreddit) is not str:
-    #     print(None)
+    if subreddit is None or type(subreddit) is not str:
+        print(None)
 
     headers = {'User-Agent': 'VUTHhzWkxrTG56djBsR3dhN'}
     parameters = {'limit': 10}
@@ -21,7 +21,7 @@ def top_ten(subreddit):
     response = requests.get(url, headers=headers, params=parameters,
                             allow_redirects=False)
     try:
-        if response.status_code != 200:
+        if response.status_code >= 300:
             print(None)
 
         data = response.json()
