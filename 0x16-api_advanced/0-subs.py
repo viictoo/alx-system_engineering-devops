@@ -2,6 +2,7 @@
 """API MODULE"""
 import requests
 
+
 def number_of_subscribers(subreddit):
     """ a function that queries the Reddit API and returns the number of
     subscribers (not active users, total subscribers) for a given subreddit.
@@ -27,7 +28,6 @@ def number_of_subscribers(subreddit):
         subs = data.get('data').get('subscribers')
 
         return subs if subs is not None else 0
-
 
     except requests.exceptions.RequestException as e:
         print(e)
