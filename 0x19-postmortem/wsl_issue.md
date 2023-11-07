@@ -1,4 +1,4 @@
-**Title:** *When WSL2 Had Too Much Sauce: A Comedy of WSL Config Mishaps*
+** *When WSL2 Had Too Much Sauce: A Comedy of WSL Config Mishaps* **
 
 Ladies and gentlemen, tech aficionados, and all those who have ever embarked on the adventurous journey of configuring Windows Subsystem for Linux (WSL), gather 'round! I've got a tale of tech turmoil that's sure to tickle your funny bone.
 
