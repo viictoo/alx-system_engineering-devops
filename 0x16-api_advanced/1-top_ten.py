@@ -10,12 +10,7 @@ def top_ten(subreddit):
     Args: https://www.reddit.com/r/python/top.json?limit=10
 
     """
-    if subreddit is None or type(subreddit) is not str:
-        print(None)
-
-    headers = {
-        'User-Agent': 'VUTHhzWkxrTG56djBsR3dhN',
-    }
+    headers = {'User-Agent': 'VUTHhzWkxrTG56djBsR3dhN'}
     parameters = {'limit': 10}
 
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
