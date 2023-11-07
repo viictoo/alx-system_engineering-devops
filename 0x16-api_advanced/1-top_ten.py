@@ -27,7 +27,5 @@ def top_ten(subreddit):
         print(None)
 
     posts = data.get('data').get('children')
-    if posts is None or (len(posts) > 0 and posts[0].get('kind') != 't3'):
-        print(None)
 
     [print(post.get('data').get('title')) for post in posts]
