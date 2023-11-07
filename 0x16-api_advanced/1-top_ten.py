@@ -22,10 +22,13 @@ def top_ten(subreddit):
                             allow_redirects=False)
     if response.status_code == 404:
         print(None)
-    data = response.json()
-    if data is None:
+    try:
+        data = response.json()
+        if data is None:
+            print(None)
+
+        posts = data.get('data').get('children')
+
+        [print(post.get('data').get('title')) for post in posts]
+    except Exception:
         print(None)
-
-    posts = data.get('data').get('children')
-
-    [print(post.get('data').get('title')) for post in posts]
