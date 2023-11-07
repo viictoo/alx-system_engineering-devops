@@ -12,9 +12,9 @@ def count_words(subreddit, word_list, words=None, after=None):
 
     """
     if subreddit is None or type(subreddit) is not str:
-        return
+        return None
     if word_list is None or len(word_list) == 0:
-        return
+        return None
 
     if words is None:
         words = {}
@@ -33,8 +33,10 @@ def count_words(subreddit, word_list, words=None, after=None):
     response = requests.get(url, headers=headers, params=parameters,
                             allow_redirects=False)
     # print(response.json())
+    # if word_list is None or len(word_list) == 0:
+    #     return None
 
-    if response.status_code >= 400:
+    if response.status_code != 200:
         return None
     data = response.json()
 
