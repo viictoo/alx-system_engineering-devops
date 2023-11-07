@@ -44,7 +44,9 @@ def count_words(subreddit, word_list, words=None, after=None):
                 words[tile]['sum'] += words[tile]['count']
 
     if after is None:
-        for key, val in words.items():
+        sorted_words = sorted(words.items(),
+                              key=lambda item: (-item[1]['sum'], item[0]))
+        for key, val in sorted_words:
             if val['sum'] != 0:
                 print(f"{key}: {val['sum']}")
     else:
