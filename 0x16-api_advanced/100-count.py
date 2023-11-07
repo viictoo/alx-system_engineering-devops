@@ -13,8 +13,6 @@ def count_words(subreddit, word_list, words=None, after=None):
     """
     if subreddit is None or type(subreddit) is not str:
         return None
-    if word_list is None or len(word_list) == 0:
-        return None
 
     if words is None:
         words = {}
