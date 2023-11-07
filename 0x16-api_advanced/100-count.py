@@ -36,7 +36,7 @@ def count_words(subreddit, word_list, words=None, after=None):
 
     if response.status_code >= 400:
         return None
-    if response.status_code < 200:
+    if response.status_code > 300:
         return None
     data = response.json()
 
