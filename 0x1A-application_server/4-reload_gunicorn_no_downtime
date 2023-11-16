@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Soft restarts gunicorn
+# Soft restarts gunicorn
 
-kill -HUP "$(ps -C gunicorn fch -o pid | head -n 1)"
+sudo kill -HUP "$(ps -C gunicorn fch -o pid | head -n 1)"
 #kill -s SIGHUP "$gpid"
