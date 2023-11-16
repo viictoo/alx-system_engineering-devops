@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 # Get the PID of the Gunicorn process using pgrep
 
-gunicorn_pid=$(pgrep -f "gunicorn.*web_flask.0-hello_route")
-
-# Check if a PID was found
-if [ -n "$gunicorn_pid" ]; then
-  # Send HUP signal to the Gunicorn process
-  pkill -WINCH -P "$gunicorn_pid"
-else
-  echo "Gunicorn process not found."
-fi
+master_pid=$(ps auxf | pgrep gunicorn | head -1)
+kill -WINCH "$master_pid"
