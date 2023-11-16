@@ -1,6 +1,6 @@
 #!/bin/bash
-
 # Get the PID of the Gunicorn process using pgrep
+
 gunicorn_pid=$(pgrep -f "gunicorn.*web_flask.0-hello_route")
 
 # Check if a PID was found
