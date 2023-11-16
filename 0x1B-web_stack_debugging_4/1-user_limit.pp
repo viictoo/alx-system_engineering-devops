@@ -7,6 +7,6 @@ exec {'soft user limit':
 }
 
 exec {'hard limit':
-    command => "sudo sed -i s/nofile 5/nofile 10000/' /etc/security/limits.conf",
+    command => "sudo sed -i 's/nofile 5/nofile 10000/' /etc/security/limits.conf",
     path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 }
