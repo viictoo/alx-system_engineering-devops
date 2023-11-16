@@ -1,0 +1,52 @@
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        root /var/www/html;
+
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+        location ~ ^/api/(?<endpoint>.+)$ {
+                proxy_pass http://127.0.0.1:5002/api/$endpoint;
+                include proxy_params;
+    }
+        location ~ ^/airbnb-dynamic/number_odd_or_even/(\d+)$ {
+                include proxy_params;
+                proxy_pass http://127.0.0.1:5001/number_odd_or_even/$1;
+        }
+        location /airbnb-onepage/ {
+        include proxy_params;
+        proxy_pass http://localhost:5000/airbnb-onepage/;
+        }
+
+        location /hbnb_static {
+                alias /data/web_static/current/;
+                index index.html index.htm 0-index.html 0-index.htm;
+        }
+
+        location /redirect_me {
+                        return 301 https://www.youtube.com/watch?v=dQw4w9WgXcQ;
+                }
+
+        error_page 404 /404.html;
+
+        add_header X-Served-By 343517-web-01;
+        add_header Access-Control-Allow-Origin * always;
+
+
+        location /static/ {
+                alias /home/ubuntu/AirBnB_clone_v4/web_dynamic/static/;
+        }
+
+        location /static/scripts/ {
+                alias /home/ubuntu/AirBnB_clone_v4/web_dynamic/static/scripts/;
+        }
+        location / {
+                proxy_pass http://127.0.0.1:5003/2-hbnb;
+                include proxy_params;
+                try_files $uri $uri/ =404;
+        }
+
+}

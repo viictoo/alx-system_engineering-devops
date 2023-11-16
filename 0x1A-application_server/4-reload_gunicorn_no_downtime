@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#Soft restarts gunicorn
+gpid=$(ps auxf | pgrep gunicorn | head -1)
+kill -1 "$gpid"
+#kill -s SIGHUP "$gpid"
