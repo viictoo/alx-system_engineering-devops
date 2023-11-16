@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Soft restarts gunicorn
 
-sudo kill -HUP "$(ps -C gunicorn fch -o pid | head -n 1)"
+ps faux | grep gunicorn | grep web_flask.0-hello_route | awk '{ print $2 }' | xargs kill -HUP
+# sudo kill -HUP "$(ps -C gunicorn fch -o pid | head -n 1)"
 #kill -s SIGHUP "$gpid"
