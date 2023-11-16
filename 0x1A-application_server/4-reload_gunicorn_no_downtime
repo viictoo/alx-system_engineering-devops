@@ -1,6 +1,12 @@
-#!/usr/bin/env bash
-# Soft restarts gunicorn
+#!/bin/bash
 
-ps faux | grep gunicorn | grep web_flask.0-hello_route | awk '{ print $2 }' | xargs kill -HUP
-# sudo kill -HUP "$(ps -C gunicorn fch -o pid | head -n 1)"
-#kill -s SIGHUP "$gpid"
+# Get the PID of the Gunicorn process using pgrep
+gunicorn_pid=$(pgrep -f "gunicorn.*web_flask.0-hello_route")
+
+# Check if a PID was found
+if [ -n "$gunicorn_pid" ]; then
+  # Send HUP signal to the Gunicorn process
+  kill -HUP "$gunicorn_pid"
+else
+  echo "Gunicorn process not found."
+fi
