@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # Get the PID of the Gunicorn process using pgrep
 pgrep gunicorn | xargs kill -HUP
+
