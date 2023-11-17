@@ -1,8 +1,3 @@
 #!/usr/bin/env bash
 # Get the PID of the Gunicorn process using pgrep
-
-# master_pid=$(ps auxf | pgrep gunicorn | head -1)
-# master_pid=$(ps auxf | grep gunicorn | grep Ss | head -1)
-# kill -1 "$master_pid"
-pkill -HUP -f 'Ss.*gunicorn'
-# kill -WINCH "$master_pid"
+pgrep gunicorn | xargs kill -HUP
