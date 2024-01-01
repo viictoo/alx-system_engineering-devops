@@ -1,1 +1,1 @@
-this is a readme at root of shell basics
+This repository contains System Administration and Devops Projects
